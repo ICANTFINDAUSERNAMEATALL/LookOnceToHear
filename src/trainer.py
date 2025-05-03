@@ -51,12 +51,13 @@ def main(args, hparams):
 
     # Init trainer
     trainer = pl.Trainer(
-        accelerator="gpu", devices=-1, strategy='ddp_find_unused_parameters_true', max_epochs=100,
+        accelerator="auto", devices=1, strategy='ddp_find_unused_parameters_true', max_epochs=100,
         logger=wandb_logger, callbacks=callbacks, limit_train_batches=args.frac, gradient_clip_val=grad_clip,
         limit_val_batches=args.frac, limit_test_batches=args.frac)
 
     # Maximum 4 worker per GPU
-    num_workers = min(len(os.sched_getaffinity(0)), 4)
+    num_workers = 4 # min(os.cpu_count(), 4)
+    # num_workers = min(len(os.sched_getaffinity(0)), 4)
 
     # Choose checkpoint to use
     # If provided, use checkpoint given

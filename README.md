@@ -1,5 +1,8 @@
 # Look Once to Hear
 
+python -m src.trainer --config "configs/tsh.json" --run_dir "runs/tsh" --frac "0.05"
+
+
 [![Ab](https://img.shields.io/badge/arxiv-abs-green)](https://arxiv.org/abs/2405.06289) [![Gradio demo](https://img.shields.io/badge/arxiv-pdf-green)](https://arxiv.org/pdf/2405.06289)
 
 This repository provides code for the paper, __Look Once to Hear: Target Speech Hearing with Noisy Examples__. __Look Once to Hear__ is an intelligent hearable system where users choose to hear a target speaker by just looking at them for a few seconds. This paper won best paper honorable mention 🏆 at CHI 2024.
