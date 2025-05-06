@@ -18,8 +18,8 @@ def create_slurm_script(slurm_config):
         f.write("#SBATCH --job-name=%s\n" % slurm_config.exp_name)
 
         # Set email notification
-        f.write("#SBATCH --mail-type=FAIL\n")
-        f.write("#SBATCH --mail-user=%s\n" % slurm_config.email)
+        # f.write("#SBATCH --mail-type=FAIL\n")
+        # f.write("#SBATCH --mail-user=%s\n" % slurm_config.email)
 
         # Set account
         f.write("#SBATCH --account=%s\n" % slurm_config.account)
